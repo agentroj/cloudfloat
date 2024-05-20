@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "6cacf32f-1a71-4d9f-bd21-f9e0d8003f0b",
+		"name": "Cloudfloat Invoice Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4998006"
+	},
+	"item": [
+		{
+			"name": "Upload Invoice",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"invoice_number\": \"INV-0011\",\r\n  \"amount_in_cents\": 12345,\r\n  \"timestamp_utc\": \"2024-05-29T12:34:56Z\",\r\n  \"statement_reference\": \"Reference12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8666/invoices/upload_invoice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8666",
+					"path": [
+						"invoices",
+						"upload_invoice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Monthly Report",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8666/invoices/monthly_report?month=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8666",
+					"path": [
+						"invoices",
+						"monthly_report"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": ""
+						},
+						{
+							"key": "year",
+							"value": "432423",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
